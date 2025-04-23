@@ -2,46 +2,68 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+    <div class="flex h-screen">
+        <!-- Gambar (30%) - Di desktop, 100% di mobile -->
+        <div class="w-full lg:w-[30%] h-64 lg:h-full bg-center bg-cover"
+            style="background-image: url('{{ asset('images/daun.jpg') }}'); background-size: cover; background-position: center;">
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+        <!-- Formulir Login (70%) - Di desktop, 100% di mobile -->
+        <div class="w-full lg:w-[70%] p-6 flex items-center justify-center"
+            style="height: 100vh; background-color: #E4E8D6;">
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+            <div class="w-full max-w-md">
+                <!-- Teks Masuk di atas Form -->
+                <h3 class="text-center mb-2" style="color: #42563D; font-size: 3rem; font-weight: 600;">
+                    MASUK
+                </h3>
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+
+                    <!-- Email Address -->
+                    <div class="flex flex-col items-start justify-center mt-4 w-full">
+                        <x-text-input id="email" class="block mt-1 w-full placeholder-[#282323]"
+                            style="background-color: #DDE1CD !important; color: #282323;" type="email" name="email"
+                            :value="old('email')" required autofocus autocomplete="username" placeholder="Email" />
+                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                    </div>
+
+                    <!-- Password -->
+                    <div class="flex flex-col items-start justify-center mt-6 w-full">
+                        <x-text-input id="password" class="block mt-1 w-full placeholder-[#282323]"
+                            style="background-color: #DDE1CD !important; color: #282323;" type="password"
+                            name="password" required autocomplete="current-password" placeholder="Password" />
+                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                    </div>
+
+
+                    <!-- Remember Me -->
+                    <div class="flex items-center justify-start mt-4">
+                        <label for="remember_me" class="inline-flex items-center">
+                            <input id="remember_me" type="checkbox"
+                                class="rounded text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember" />
+                            <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                        </label>
+                    </div>
+
+                    <div class="flex flex-col items-center justify-center mt-4">
+                        <!-- Tombol Masuk -->
+                        <x-primary-button class="ml-1"
+                            style="background-color: #637A30; width: 100%; height: 48px; color: white; text-align: center; display: flex; justify-content: center; align-items: center;">
+                            Masuk
+                        </x-primary-button>
+
+                        <!-- Link Belum punya akun? Daftar di bawah tombol -->
+                        <div class="text-center mt-4">
+                            <a class="underline text-sm text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                href="{{ route('register') }}">
+                                Belum punya akun? Daftar
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ml-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
+    </div>
 </x-guest-layout>
