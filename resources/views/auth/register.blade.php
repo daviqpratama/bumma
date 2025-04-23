@@ -1,52 +1,74 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
-
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+    <div class="flex h-screen">
+        <!-- Gambar (30%) -->
+        <div class="w-full lg:w-[30%] h-64 lg:h-full bg-center bg-cover"
+            style="background-image: url('{{ asset('images/daun.jpg') }}'); background-size: cover; background-position: center;">
         </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <!-- Formulir Register (70%) -->
+        <div class="w-full lg:w-[70%] p-6 flex items-center justify-center" style="height: 100vh; background-color: #E4E8D6;">
+            <div class="w-full max-w-md">
+                <!-- Judul -->
+                <h3 class="text-center mb-2" style="color: #42563D; font-size: 3rem; font-weight: 600;">
+                    DAFTAR
+                </h3>
+
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+
+                    <!-- Name -->
+                    <div class="flex flex-col items-start justify-center mt-4 w-full">
+                        <x-text-input id="name" class="block mt-1 w-full placeholder-[#282323]"
+                            style="background-color: #DDE1CD !important; color: #282323;" type="text"
+                            name="name" :value="old('name')" required autofocus autocomplete="name"
+                            placeholder="Nama Lengkap" />
+                        <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex flex-col items-start justify-center mt-6 w-full">
+                        <x-text-input id="email" class="block mt-1 w-full placeholder-[#282323]"
+                            style="background-color: #DDE1CD !important; color: #282323;" type="email"
+                            name="email" :value="old('email')" required autocomplete="username"
+                            placeholder="Email" />
+                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                    </div>
+
+                    <!-- Password -->
+                    <div class="flex flex-col items-start justify-center mt-6 w-full">
+                        <x-text-input id="password" class="block mt-1 w-full placeholder-[#282323]"
+                            style="background-color: #DDE1CD !important; color: #282323;" type="password"
+                            name="password" required autocomplete="new-password"
+                            placeholder="Password" />
+                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="flex flex-col items-start justify-center mt-6 w-full">
+                        <x-text-input id="password_confirmation" class="block mt-1 w-full placeholder-[#282323]"
+                            style="background-color: #DDE1CD !important; color: #282323;" type="password"
+                            name="password_confirmation" required autocomplete="new-password"
+                            placeholder="Konfirmasi Password" />
+                        <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                    </div>
+
+                    <div class="flex flex-col items-center justify-center mt-6">
+                        <!-- Tombol Register -->
+                        <x-primary-button class="ml-1"
+                            style="background-color: #637A30; width: 100%; height: 48px; color: white; text-align: center; display: flex; justify-content: center; align-items: center;">
+                            Daftar
+                        </x-primary-button>
+
+                        <!-- Link ke Login -->
+                        <div class="text-center mt-4">
+                            <a class="underline text-sm text-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                href="{{ route('login') }}">
+                                Sudah punya akun? Masuk
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ml-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
+    </div>
 </x-guest-layout>
