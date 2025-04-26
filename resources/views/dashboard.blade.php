@@ -73,6 +73,27 @@
                 </div>
             </div>
 
+             <!-- Card: Distribusi Dana Sosial -->
+             <div class="w-[428px] h-[208px] p-4 bg-white bg-opacity-90 border border-gray-200 shadow-md flex items-start">
+                <img src="{{ asset('images/rumah.png') }}" alt="Tanggal"
+                    style="width: 50px; height: 50px; margin-right: 15px;">
+                <div style="text-align: left;">
+                    <h5 class="text-lg font-bold text-gray-900 mb-2">Distribusi Dana Sosial</h5>
+                    <p class="text-sm text-gray-700 mb-4">Penerimaan dana sosial dan dana kebutuhsn Adat.</p>
+                    <div class="flex justify-start mt-10">
+                        <a href="#" class="inline-flex items-center text-[#E5B300] font-semibold hover:underline"
+                            style="font-size: 16px; padding: 8px 30px; color: #E5B300;">
+                            GET STARTED
+                            <span style="margin-left: 5px;"></span>
+                            <svg width="14" height="10" fill="none" stroke="#E5B300" viewBox="0 0 14 10">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M1 5h12m0 0L9 1m4 4L9 9" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
