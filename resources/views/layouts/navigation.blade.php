@@ -76,13 +76,13 @@
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="x-nav-link" style="color: #000;">
                             {{ __('Dashboard') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="x-nav-link" style="color: #000;">
+                        <x-nav-link :href="route('daftar_usaha')" :active="request()->routeIs('dashboard')" class="x-nav-link" style="color: #000;">
                             {{ __('Daftar Usaha') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="x-nav-link" style="color: #000;">
+                        <x-nav-link :href="route('riwayat_transaksi')" :active="request()->routeIs('dashboard')" class="x-nav-link" style="color: #000;">
                             {{ __('Riwayat Transaksi') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="x-nav-link" style="color: #000;">
+                        <x-nav-link :href="route('distribusi_dana_sosial')" :active="request()->routeIs('dashboard')" class="x-nav-link" style="color: #000;">
                             {{ __('Distribusi Dana Sosial') }}
                         </x-nav-link>
                     </div>

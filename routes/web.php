@@ -28,4 +28,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//Route Frontend
+Route::view('/daftar_usaha', 'daftar_usaha')->name('daftar_usaha');
+Route::view('/riwayat_transaksi', 'riwayat_transaksi')->name('riwayat_transaksi');
+Route::view('/distribusi_dana_sosial', 'distribusi_dana_sosial')->name('distribusi_dana_sosial');
+
+
 require __DIR__.'/auth.php';
