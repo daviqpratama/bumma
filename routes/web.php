@@ -33,5 +33,27 @@ Route::view('/daftar_usaha', 'daftar_usaha')->name('daftar_usaha');
 Route::view('/riwayat_transaksi', 'riwayat_transaksi')->name('riwayat_transaksi');
 Route::view('/distribusi_dana_sosial', 'distribusi_dana_sosial')->name('distribusi_dana_sosial');
 
+//Route Daftar Usaha
+Route::get('/kehutanan', function () {
+    return view('kehutanan.index');
+})->name('kehutanan.index');
+
+Route::get('/ekowisata', function () {
+    return view('ekowisata.index');
+})->name('ekowisata.index');
+
+
+Route::get('/pertanian', function () {
+    return view('pertanian.index');
+})->name('pertanian.index');
+
+
+Route::get('/peternakan', function () {
+    return view('peternakan.index');
+})->name('peternakan.index');
+
+Route::get('/perikanan', function () {
+    return view('perikanan.index');
+})->name('perikanan.index');
 
 require __DIR__.'/auth.php';

@@ -17,19 +17,19 @@
             <h2 style="font-weight: bold; font-size: 20px; color: #1F2937; margin: 0;">Daftar Usaha</h2>
         </div>
         <nav style="display: flex; flex-direction: column; gap: 12px;">
-            <a href="#" style="color: #4B5563; text-decoration: none; font-size: 16px; height: 32px; display: flex; align-items: center; justify-content: center;">
+            <a href="{{ route('kehutanan.index') }}" style="color: #4B5563; text-decoration: none; font-size: 16px; height: 32px; display: flex; align-items: center; justify-content: center;">
                 Kehutanan
             </a>
-            <a href="#" style="color: #4B5563; text-decoration: none; font-size: 16px; height: 32px; display: flex; align-items: center; justify-content: center;">
+            <a href="{{ route('ekowisata.index') }}" style="color: #4B5563; text-decoration: none; font-size: 16px; height: 32px; display: flex; align-items: center; justify-content: center;">
                 Ekowisata
             </a>
-            <a href="#" style="color: #4B5563; text-decoration: none; font-size: 16px; height: 32px; display: flex; align-items: center; justify-content: center;">
+            <a href="{{ route('pertanian.index') }}" style="color: #4B5563; text-decoration: none; font-size: 16px; height: 32px; display: flex; align-items: center; justify-content: center;">
                 Pertanian
             </a>
-            <a href="#" style="color: #4B5563; text-decoration: none; font-size: 16px; height: 32px; display: flex; align-items: center; justify-content: center;">
+            <a href="{{ route('peternakan.index') }}" style="color: #4B5563; text-decoration: none; font-size: 16px; height: 32px; display: flex; align-items: center; justify-content: center;">
                 Peternakan
             </a>
-            <a href="#" style="color: #4B5563; text-decoration: none; font-size: 16px; height: 32px; display: flex; align-items: center; justify-content: center;">
+            <a href="{{ route('perikanan.index') }}" style="color: #4B5563; text-decoration: none; font-size: 16px; height: 32px; display: flex; align-items: center; justify-content: center;">
                 Perikanan
             </a>
         </nav>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <p class="font-semibold text-lg">Daftar Usaha</p>
-                <a href="{{ route('daftar_usaha') }}" class="inline-flex items-center font-semibold hover:underline mt-2" style="color: #3C7228;">
+                <a href="{{ route('kehutanan.index') }}" class="inline-flex items-center font-semibold hover:underline mt-2" style="color: #3C7228;">
                     LIHAT DETAIL
                     <svg width="14" height="10" fill="none" stroke="#3C7228" viewBox="0 0 14 10" style="margin-left: 5px;">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <p class="font-semibold text-lg">Daftar Usaha</p>
-                <a href="{{ route('daftar_usaha') }}" class="inline-flex items-center font-semibold hover:underline mt-2" style="color: #3C7228;">
+                <a href="{{ route('ekowisata.index') }}" class="inline-flex items-center font-semibold hover:underline mt-2" style="color: #3C7228;">
                     LIHAT DETAIL
                     <svg width="14" height="10" fill="none" stroke="#3C7228" viewBox="0 0 14 10" style="margin-left: 5px;">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -77,7 +77,7 @@
                     </div>
                 </div>
                 <p class="font-semibold text-lg">Daftar Usaha</p>
-                <a href="{{ route('daftar_usaha') }}" class="inline-flex items-center font-semibold hover:underline mt-2" style="color: #3C7228;">
+                <a href="{{ route('pertanian.index') }}" class="inline-flex items-center font-semibold hover:underline mt-2" style="color: #3C7228;">
                     LIHAT DETAIL
                     <svg width="14" height="10" fill="none" stroke="#3C7228" viewBox="0 0 14 10" style="margin-left: 5px;">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -96,7 +96,7 @@
                     </div>
                 </div>
                 <p class="font-semibold text-lg">Daftar Usaha</p>
-                <a href="{{ route('daftar_usaha') }}" class="inline-flex items-center font-semibold hover:underline mt-2" style="color: #3C7228;">
+                <a href="{{ route('peternakan.index') }}" class="inline-flex items-center font-semibold hover:underline mt-2" style="color: #3C7228;">
                     LIHAT DETAIL
                     <svg width="14" height="10" fill="none" stroke="#3C7228" viewBox="0 0 14 10" style="margin-left: 5px;">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -111,7 +111,7 @@
                     </div>
                 </div>
                 <p class="font-semibold text-lg">Daftar Usaha</p>
-                <a href="{{ route('daftar_usaha') }}" class="inline-flex items-center font-semibold hover:underline mt-2" style="color: #3C7228;">
+                <a href="{{ route('perikanan.index') }}" class="inline-flex items-center font-semibold hover:underline mt-2" style="color: #3C7228;">
                     LIHAT DETAIL
                     <svg width="14" height="10" fill="none" stroke="#3C7228" viewBox="0 0 14 10" style="margin-left: 5px;">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
